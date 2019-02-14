@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke">
+    <parameter name="baseUrl" value="devpublicUrl"></parameter>
+
+    <parameter name="firstNameKyc" value="firstNameKycCA"></parameter>
+    <parameter name="lastNameKyc" value="lastNameKycCA"></parameter>
+    <parameter name="birthDateKyc" value="birthDateKycCA"></parameter>
+    <parameter name="countyKyc" value="countyKycCA"></parameter>
+    <parameter name="city" value="cityCA"></parameter>
+    <parameter name="state" value="stateCA"></parameter>
+    <parameter name="ZIP" value="ZIPCA"></parameter>
+    <parameter name="street" value="streetCA"></parameter>
+    <parameter name="building" value="buildingCA"></parameter>
+    <parameter name="apartment" value="apartmentCA"></parameter>
+    <parameter name="idNumber" value="idNumberCA"></parameter>
+    <parameter name="countryOfIssuance" value="countryOfIssuanceCA"></parameter>
+    <parameter name="documentName" value="ca.png"></parameter>
+    <parameter name="documentType" value="Passport"></parameter>
+    <parameter name="status" value="SUCCESS"></parameter>
+
+    <test name="SignUp">
+        <groups>
+            <run>
+                <include name="Chrome" />
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HeaderTest">
+                <methods>
+                    <include name="openSignUp"/>
+                </methods>
+            </class>
+            <class name="WebTests.SignUpTest">
+                <methods>
+                    <include name="signUp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="KYC Canada">
+        <groups>
+            <run>
+                <include name="Chrome" />
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HeaderTest">
+                <methods>
+                    <include name="openSettings"/>
+                </methods>
+            </class>
+            <class name="WebTests.AccountVerificationTest">
+                <methods>
+                    <include name="kyc"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke">
+    <parameter name="baseUrl" value=""></parameter>
+
+    <test name="signUp">
+        <parameter name="" value=""></parameter>
+        <groups>
+            <run>
+                <include name="" />
+                <exclude name=""/>
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HomePageTest"/>
+            <class name="WebTests.SignUpPageTest"/>
+        </classes>
+    </test>
+
+    <test name="signIn">
+        <classes>
+            <class name="WebTests.SignInPageTest">
+            <methods>
+                <include name="signIn"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

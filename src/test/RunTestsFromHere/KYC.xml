@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke">
+    <parameter name="baseUrl" value="stagingUrl"></parameter>
+
+    <test name="KYC">
+        <groups>
+            <run>
+                <include name="Chrome" />
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HeaderTest">
+                <methods>
+                    <include name="openLogIn"/>
+                </methods>
+            </class>
+            <class name="WebTests.LogInTest">
+            <methods>
+                <include name="logIn"/>
+            </methods>
+            </class>
+            <class name="WebTests.AccountVerificationTest">
+                <methods>
+                    <include name="kyc"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

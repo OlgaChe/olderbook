@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="logout">
+    <parameter name="baseUrl" value="prodUrl"></parameter>
+    <parameter name="login" value="qa+1@orderbook.io"></parameter>
+    <parameter name="password" value="gdetokinysu"></parameter>
+
+    <test name="logIn">
+        <groups>
+            <run>
+                <include name="Chrome" />
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HeaderTest">
+                <methods>
+                    <include name="openLogIn"/>
+                </methods>
+            </class>
+            <class name="WebTests.LogInTest">
+                <methods>
+                    <include name="logIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="logOut">
+        <groups>
+            <run>
+                <include name="Chrome" />
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HeaderTest">
+                <methods>
+                    <include name="logOut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

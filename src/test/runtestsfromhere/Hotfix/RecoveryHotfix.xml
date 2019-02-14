@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke">
+    <parameter name="baseUrl" value="hotfixUrl"></parameter>
+    <parameter name="recoveryUrl" value="hotfixRec"></parameter>
+    <parameter name="email" value="bugbasters+05301719923@gmail.com"></parameter>
+    <parameter name="login" value="bugbasters+05301719923@gmail.com"></parameter>
+    <parameter name="password" value="123qaz"></parameter>
+    <parameter name="env" value="hotfix"></parameter>
+
+    <test name="recovery">
+        <groups>
+            <run>
+                <include name="Chrome" />
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HeaderTest">
+                <methods>
+                    <include name="openLogIn"/>
+                </methods>
+            </class>
+            <class name="WebTests.RecoveryTest">
+                <methods>
+                    <include name="recovery"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="login">
+        <groups>
+            <run>
+                <include name="Chrome" />
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HeaderTest">
+                <methods>
+                    <include name="openLogIn"/>
+                </methods>
+            </class>
+            <class name="WebTests.LogInTest">
+                <methods>
+                    <include name="logIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

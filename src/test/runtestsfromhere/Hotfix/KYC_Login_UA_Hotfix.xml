@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke">
+    <parameter name="baseUrl" value="hotfixUrl"></parameter>
+
+    <parameter name="login" value="qa@orderbook.io"></parameter>
+    <parameter name="password" value="123qaz"></parameter>
+
+    <parameter name="firstNameKyc" value="firstNameKycUA"></parameter>
+    <parameter name="lastNameKyc" value="lastNameKycUA"></parameter>
+    <parameter name="birthDateKyc" value="birthDateKycUA"></parameter>
+    <parameter name="countyKyc" value="countyKycUA"></parameter>
+    <parameter name="city" value="cityUA"></parameter>
+    <parameter name="state" value="stateUA"></parameter>
+    <parameter name="ZIP" value="ZIPUA"></parameter>
+    <parameter name="street" value="streetUA"></parameter>
+    <parameter name="building" value="buildingUA"></parameter>
+    <parameter name="apartment" value="apartmentUA"></parameter>
+    <parameter name="idNumber" value="idNumberUA"></parameter>
+    <parameter name="countryOfIssuance" value="countryOfIssuanceUA"></parameter>
+    <parameter name="documentName" value="ua.png"></parameter>
+    <parameter name="documentType" value="Passport"></parameter>
+    <parameter name="status" value="SUCCESS"></parameter>
+
+    <test name="Login">
+        <groups>
+            <run>
+                <include name="Chrome" />
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HeaderTest">
+                <methods>
+                    <include name="openLogIn"/>
+                </methods>
+            </class>
+            <class name="WebTests.LogInTest">
+            <methods>
+                <include name="logIn"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="KYC Ukraine">
+        <groups>
+            <run>
+                <include name="Chrome" />
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HeaderTest">
+                <methods>
+                    <include name="openSettings"/>
+                </methods>
+            </class>
+            <class name="WebTests.AccountVerificationTest">
+                <methods>
+                    <include name="kyc"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+       <!--
+        List off non KYC users
+
+
+
+
+
+        bugbasters+12022225932@gmail.com
+        bugbasters+1202224620@gmail.com
+        bugbasters+12022256642@gmail.com
+        bugbasters+12022258101@gmail.com
+        bugbasters+12022315740@gmail.com
+        bugbasters+12022323220@gmail.com
+        bugbasters+12022328862@gmail.com
+        bugbasters+12022329363@gmail.com
+        bugbasters+12022330692@gmail.com
+        bugbasters+12022333350@gmail.com
+      -->

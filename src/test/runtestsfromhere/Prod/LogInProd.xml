@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke">
+    <parameter name="baseUrl" value="prodUrl"></parameter>
+    <parameter name="login" value="qa+13@orderbook.io"></parameter>
+    <parameter name="password" value="123qaz"></parameter>
+
+    <test name="logIn">
+        <groups>
+            <run>
+                <include name="Chrome" />
+            </run>
+        </groups>
+        <classes>
+            <class name="WebTests.HeaderTest">
+                <methods>
+                    <include name="openLogIn"/>
+                </methods>
+            </class>
+            <class name="WebTests.LogInTest">
+            <methods>
+                <include name="logIn"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
